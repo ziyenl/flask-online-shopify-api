@@ -39,9 +39,9 @@ def create_app(db_url=None):
     # Flask smorest extension around Flask
     api = Api(app)
 
-    # jwt secret key
+    # JWT
     # generate using secrets str(secrets.SystemRandom().getrandbits(128)).
-    app.config["JWT_SECRET_KEY"] = "41114230394179597564573606699191778625"
+    app.config["JWT_SECRET_KEY"] = ''
     jwt = JWTManager(app)
 
     @jwt.expired_token_loader
