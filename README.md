@@ -19,4 +19,4 @@ It concentrates on three central model schema around:
 
 ---
 APIs as seen in the Insomnia Snapshot below:
-![alt text](https://github.com/ziyenl/flask-online-shopify-api/blob/main/insomnia/insomnia.JPG?raw=true)
+![alt text](../insomnia/insomnia.JPG?raw=true)
