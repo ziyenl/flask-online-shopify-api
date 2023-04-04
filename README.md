@@ -17,3 +17,6 @@ It concentrates on three central model schema around:
 - Category
 
 
+---
+APIs as seen in the Insomnia Snapshot below:
+![alt text](https://github.com/ziyenl/flask-online-shopify-api/blob/main/insomnia/insomnia.JPG?raw=true)
