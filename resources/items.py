@@ -1,6 +1,5 @@
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
-from flask_jwt_extended import jwt_required
 from sqlalchemy.exc import SQLAlchemyError
 
 from db import db
@@ -13,7 +12,6 @@ blp = Blueprint("Items", __name__, description="Operations on store items")
 @blp.route("/item/<int:item_id>")
 class Item(MethodView):
 
-    @jwt_required()
     @blp.response(200, ItemSchema)
     def get(self, item_id):
         """
