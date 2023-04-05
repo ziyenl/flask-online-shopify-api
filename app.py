@@ -75,8 +75,8 @@ def create_app(db_url=None):
         )
 
     # Create database schemas at first request
-    #with app.app_context():
-        #db.create_all()
+    with app.app_context():
+        db.create_all()
 
     api.register_blueprint(ItemBluePrint)
     api.register_blueprint(StoreBluePrint)
