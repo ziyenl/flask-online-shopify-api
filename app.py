@@ -4,6 +4,7 @@ from flask import Flask, jsonify
 from flask_smorest import Api
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
+from dotenv import load_dotenv
 import models
 from db import db
 
@@ -20,6 +21,7 @@ def create_app(db_url=None):
     :return: flask app
     """
     app = Flask(__name__)
+    load_dotenv() # load .env at home directory
 
     # configs for Swagger Documentation
     app.config["API_TITLE"] = "Shopify Stores REST API"
@@ -73,8 +75,8 @@ def create_app(db_url=None):
         )
 
     # Create database schemas at first request
-    with app.app_context():
-        db.create_all()
+    #with app.app_context():
+        #db.create_all()
 
     api.register_blueprint(ItemBluePrint)
     api.register_blueprint(StoreBluePrint)

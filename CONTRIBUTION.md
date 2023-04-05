@@ -9,3 +9,4 @@
 - `docker build -t <IMAGE_NAME> .`: builds the docker image
 - `docker run -dp 5007:5000 -w /app -v "$(pwd):/app" <IMAGE_NAME> sh -c "flask run"`: creates the docker container and run it using flask
 
+3. If you need to use a different db, set the setting through .env

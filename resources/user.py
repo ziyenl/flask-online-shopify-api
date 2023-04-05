@@ -1,9 +1,7 @@
-
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from flask_jwt_extended import create_access_token
 from passlib.hash import pbkdf2_sha256
-
 from db import db
 from models import UserModel
 from schema import UserSchema
@@ -24,7 +22,7 @@ class UserRegistration(MethodView):
         if UserModel.query.filter(UserModel.name == user_data['name']).first():
             abort(409, "Username already exist.")
         user = UserModel(name=user_data['name'],
-                          password=pbkdf2_sha256.hash(user_data['password'])) # hash the password
+                        password=pbkdf2_sha256.hash(user_data['password'])) # hash the password
         db.session.add(user)
         db.session.commit()
 
@@ -45,6 +43,7 @@ class UserLogin(MethodView):
             return {"access_token" : access_token}, 200
 
         abort(401, message="Invalid credentials.")
+
 
 @blp.route("/user/<int:user_id>")
 class User(MethodView):
