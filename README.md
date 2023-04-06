@@ -17,8 +17,8 @@ It concentrates on three central model schema around:
 - Category
 
 ---
-sample API link on Render
-https://flask-online-shopify-api.onrender.com/store
+Swagger link on Render
+https://flask-online-shopify-api.onrender.com/swagger-ui
 
 ---
 APIs as seen in the Insomnia Snapshot below:
