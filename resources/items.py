@@ -15,7 +15,7 @@ class Item(MethodView):
     @blp.response(200, ItemSchema)
     def get(self, item_id):
         """
-        Get item by item id
+        Get store item by item id
         :param item_id: item id
         :return: item
         """
@@ -24,7 +24,7 @@ class Item(MethodView):
 
     def delete(self, item_id):
         """
-        Delete item by item id
+        Delete store item by item id
         :param item_id: item id
         :return: str
         """
@@ -36,6 +36,12 @@ class Item(MethodView):
     @blp.arguments(ItemUpdateSchema)
     @blp.response(200, ItemSchema)
     def put(self, item_data, item_id):
+        """
+        Update name/price of store item by item id
+        :param item_data: item data
+        :param item_id: item id
+        :return: updated item
+        """
         item = ItemModel.query.get(item_id)
 
         if item:
@@ -63,6 +69,11 @@ class ItemList(MethodView):
     @blp.arguments(ItemSchema)
     @blp.response(201, ItemSchema)
     def post(self, item_data):
+        """
+        Add new store item
+        :param item_data: item data
+        :return: item
+        """
         item = ItemModel(**item_data)
 
         try:

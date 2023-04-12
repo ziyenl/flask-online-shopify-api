@@ -81,7 +81,7 @@ def create_app(db_url=None):
     api.register_blueprint(ItemBluePrint)
     api.register_blueprint(StoreBluePrint)
     api.register_blueprint(CategoryBluePrint)
-    api.register_blueprint(UserBluePrint)
+    #api.register_blueprint(UserBluePrint)
 
     return app
 
